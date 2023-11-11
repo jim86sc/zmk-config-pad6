@@ -2,6 +2,23 @@
     chosen {
         zmk,kscan = &kscan0;
     };
+    
+    kscan0: kscan_0 {
+        compatible = "zmk,kscan-gpio-matrix";
+        label = "KSCAN";
+        diode-direction = "col2row";
+
+        col-gpios
+            = <&gpio0 22 GPIO_ACTIVE_HIGH>
+            , <&gpio0 20 GPIO_ACTIVE_HIGH>
+            , <&gpio0 17 GPIO_ACTIVE_HIGH>
+            ;
+
+        row-gpios
+            = <&gpio0 24 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
+            , <&gpio1 00 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
+            ;
+    };
 
     default_transform: keymap_transform_0 {
         compatible = "zmk,matrix-transform";
@@ -15,20 +32,4 @@
         >;
     };
 
-    kscan0: kscan_0 {
-        compatible = "zmk,kscan-gpio-matrix";
-        label = "KSCAN";
-        diode-direction = "col2row";
-
-        col-gpios
-            = <&gpio0 22 GPIO_ACTIVE_HIGH>
-            , <&gpio1 20 GPIO_ACTIVE_HIGH>
-            , <&gpio2 17 GPIO_ACTIVE_HIGH>
-            ;
-
-        row-gpios
-            = <&gpio0 24 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
-            , <&gpio1 00 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
-            ;
-    };
 };
