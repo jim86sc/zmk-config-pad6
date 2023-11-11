@@ -1,0 +1,6 @@
+if SHIELD_PAD6
+
+config ZMK_KEYBOARD_NAME
+    default "pad6"
+
+endif
