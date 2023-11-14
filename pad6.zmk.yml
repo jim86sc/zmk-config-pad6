@@ -1,9 +1,0 @@
-file_format: "1"
-id: pad6
-name: Pad6
-type: shield
-url: https://makerdiary.com/pages/m60-mechanical-keyboard
-requires: [pro_micro]
-exposes: [i2c_oled]
-features:
-  - keys
